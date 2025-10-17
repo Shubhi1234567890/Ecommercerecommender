@@ -12,7 +12,7 @@ from typing import Dict, Any
 api_key = os.getenv("GEMINI_API_KEY", "AIzaSyA9yzwYSxW9L69Yl7NeXYeKEQbEuj6y-fw")
 
 # Initialize the Gemini API client only if a key is available
-if api_key and api_key != "PASTE_YOUR_API_KEY_HERE":
+if api_key and api_key != "AIzaSyA9yzwYSxW9L69Yl7NeXYeKEQbEuj6y-fw":
     try:
         # Pass the key directly to ensure it's used
         client = genai.Client(api_key=api_key)

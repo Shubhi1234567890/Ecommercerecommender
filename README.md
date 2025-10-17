@@ -27,8 +27,6 @@ Installation Steps
 Clone the Repository:
 
 git clone https://github.com/Shubhi1234567890/Ecommercerecommender.git
-cd Ecommercerecommender
-
 
 Install Dependencies:
 
@@ -37,7 +35,7 @@ pip install -r requirements.txt
 
 Set Environment Variables:
 
-export GEMINI_API_KEY="YOUR_API_KEY_HERE"
+export GEMINI_API_KEY="AIzaSyA9yzwYSxW9L69Yl7NeXYeKEQbEuj6y-fw"
 
 
 Run the Application:
