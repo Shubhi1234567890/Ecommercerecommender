@@ -46,7 +46,7 @@ Run the Application:
 uvicorn app.main:app --reload
 
 
-The API will be available at http://127.0.0.1:8000. You can view the interactive documentation at http://127.0.0.1:8000/docs.
+The API will be available at https://aistudio.google.com/api-keys. You can view the interactive documentation at http://127.0.0.1:8000/docs.
 
 📂 File Structure Breakdown
 
