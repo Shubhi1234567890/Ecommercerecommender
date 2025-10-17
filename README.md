@@ -1,43 +1,87 @@
-# Hybrid LLM-Powered E-commerce Recommender API
+📦 AI-Powered Recommendation Engine (FastAPI & Gemini)
 
-This project implements a personalized product recommendation API built with **FastAPI**, utilizing a hybrid recommendation strategy (Content-Based and Popularity) and leveraging the **Gemini API** to generate personalized, contextual explanations for each recommendation.
+This project implements a personalized recommendation system using a FastAPI backend, a relational database (SQLite/SQLAlchemy), and leverages the Gemini API for advanced, context-aware suggestions.
 
-## Features
+⚙️ Architecture Overview
 
-* **Hybrid Recommendation Logic:** Combines a user's purchase history (Content-Based focusing on their favorite category) with global best-selling products (Popularity-Based).
-* **LLM Explanation:** Uses the Gemini API to generate a unique, human-readable explanation for *why* each product was recommended, providing transparency and increasing user trust.
-* **Scalable API:** Built on FastAPI for high performance and automatic documentation (Swagger UI).
-* **Persistent Storage:** Uses SQLite and SQLAlchemy to manage product and user interaction data.
+The system utilizes a simple client-server architecture:
 
----
+Data Ingestion: Mock product and interaction data (data/) is loaded into a persistent SQLite database (via db.py).
 
-## Project Structure
+Core Logic: The recommender.py module processes user interactions to generate basic recommendations (e.g., collaborative filtering or content-based matching).
 
-This project has a simple structure designed for a small, functional API service:
+Intelligent Refinement: The llm_service.py uses the Gemini API to take the base recommendations and refine them based on user context or current trends, providing personalized, natural language-driven product descriptions or suggestions.
 
-.├── app/│   ├── main.py             # FastAPI application entry point and routing│   ├── db.py               # Database setup, SQLAlchemy models, and initial data loading│   ├── recommender.py      # Core recommendation logic│   └── llm_service.py      # Handles interaction with the Gemini API├── data/│   ├── products.csv        # Mock product data│   └── interactions.csv    # Mock user activity (purchases, views, likes)├── requirements.txt        # Python package dependencies└── README.md               # This documentation file
----
+API Gateway: main.py handles all routing and exposes endpoints (e.g., /recommend/user_id).
 
-## Setup and Installation
+🛠️ Setup and Installation
 
-### 1. Prerequisites
+Prerequisites
 
-* Python 3.8+
-* A **Gemini API Key** from Google AI Studio.
+Python 3.9+
 
-### 2. Environment Setup
+A Gemini API Key (set as an environment variable)
 
-Clone the repository and install dependencies:
+Installation Steps
 
-```bash
-# Install required Python packages
+Clone the Repository:
+
+git clone [Your Repository URL]
+cd [repository-name]
+
+
+Install Dependencies:
 
 pip install -r requirements.txt
 
-3. Configure the Gemini API KeyYou must provide your Gemini API Key to the application. You should have already done this in app/llm_service.py by replacing the placeholder with your actual key.4. Run the ApplicationStart the FastAPI server using 
 
-Uvicorn:Bash uvicorn app.main:app--reload
+Set Environment Variables:
 
-The application will start at http://127.0.0.1:8000.API UsageThe API provides one main endpoint for fetching personalized recommendations.Get RecommendationsGET /api/v1/recommend/{user_id}ParameterTypeDescriptionuser_idPath (string)The ID of the user (e.g., U101, U102)Example Request:Bashcurl -X 'GET' '[http://127.0.0.1:8000/api/v1/recommend/U101](http://127.0.0.1:8000/api/v1/recommend/U101)' -H 'accept: application/json'
+export GEMINI_API_KEY="YOUR_API_KEY_HERE"
 
-You can also test the endpoint directly using the Swagger UI available at: http://127.0.0.1:8000/docs
+
+Run the Application:
+
+# Uvicorn is the ASGI server used by FastAPI
+uvicorn app.main:app --reload
+
+
+The API will be available at http://127.0.0.1:8000. You can view the interactive documentation at http://127.0.0.1:8000/docs.
+
+📂 File Structure Breakdown
+
+File
+
+Role
+
+Key Functionality
+
+app/main.py
+
+API Entry Point
+
+Defines /recommend and /products endpoints. Orchestrates calls between db.py, recommender.py, and llm_service.py.
+
+app/db.py
+
+Data Layer
+
+Sets up the SQLite database, defines SQLAlchemy models (Products, Users, Interactions), and loads initial data from data/products.csv.
+
+app/recommender.py
+
+Recommendation Core
+
+Contains the non-LLM logic, such as filtering products or calculating similarity scores based on historical interactions.
+
+app/llm_service.py
+
+AI Interface
+
+Handles all communication with the Gemini API for advanced recommendation explanations or creative suggestion generation.
+
+data/
+
+Data Storage
+
+Contains mock datasets necessary for populating the database.
