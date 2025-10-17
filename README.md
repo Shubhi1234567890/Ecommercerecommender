@@ -26,8 +26,8 @@ Installation Steps
 
 Clone the Repository:
 
-git clone [Your Repository URL]
-cd [repository-name]
+git clone https://github.com/Shubhi1234567890/Ecommercerecommender.git
+cd Ecommercerecommender
 
 
 Install Dependencies:
