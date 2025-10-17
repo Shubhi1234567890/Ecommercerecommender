@@ -1,0 +1,11 @@
+product_id,name,category,price,description (for LLM)
+P001,4K Ultra HD Smart TV,Electronics,599.99,55-inch QLED display with 120Hz refresh rate. Features built-in voice assistant and three HDMI 2.1 ports. Ideal for movies and gaming.
+P002,The Stolen Crown (Novel),Books,19.99,"A historical fiction masterpiece set in the 17th century, featuring political intrigue and a detailed, complex protagonist. By award-winning author A. B. Smith."
+P003,Ergonomic Office Chair,Home & Furniture,189.5,High-back mesh design with adjustable lumbar support and padded armrests. Perfect for 8+ hours of daily use. Comes in black and gray.
+P004,Wireless Bluetooth Earbuds,Electronics,45,"10-hour battery life with charging case, IPX7 waterproof rating, and passive noise isolation. Excellent value for daily commute and workouts."
+P005,French Press Coffee Maker,Home & Kitchen,24.95,"34-ounce capacity, made with heat-resistant borosilicate glass and a stainless steel plunger filter. Makes smooth, rich coffee."
+P006,The Art of Prompt Engineering,Books,35,"A non-fiction guide covering advanced techniques for interacting with large language models, including few-shot and chain-of-thought prompting."
+P007,Heavy-Duty Blender,Home & Kitchen,79.99,1200-watt motor capable of crushing ice and blending nuts. Features four preset modes for smoothies and soups.
+P008,Classic Cotton T-Shirt,Apparel,29.99,100% organic cotton. Available in six colors. Pre-shrunk for a perfect fit. Known for its durable quality.
+P009,Portable SSD (1TB),Electronics,89.99,USB 3.2 Gen 2 interface for fast data transfer speeds up to 1050 MB/s. Shock-resistant compact design.
+P010,Beginner Yoga Mat,Sports & Outdoors,15.75,"Non-slip TPE material, 6mm thickness for comfort. Lightweight and includes a carrying strap."
